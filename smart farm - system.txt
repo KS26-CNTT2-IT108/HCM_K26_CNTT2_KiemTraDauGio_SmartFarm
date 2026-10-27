@@ -1,0 +1,13 @@
+Chức năng 1 Khởi tạo thư mục và file .env
+PowerShell
+mkdir smartfarm-system; cd smartfarm-system; mkdir docs, scripts, data, backup
+cd data
+"DB_PASSWORD=demo_123456" > "..\.env"
+Set-ItemProperty -Path "..\.env" -Name Attributes -Value ([System.IO.FileAttributes]::Hidden)
+
+Chức năng 2 Chạy script auto_report.ps1 (đứng trong thư mục scripts/)
+PowerShell
+Chạy trực tiếp
+.\auto_report.ps1
+Hoặc chạy khi bị chặn ExecutionPolicy
+powershell -ExecutionPolicy Bypass -File .\auto_report.ps1
